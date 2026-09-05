@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViajaFácil — Datos del pasajero</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="back-link" href="asiento.html">← Volver</a>
+    <a class="brand" href="index.html"><span class="icon">✈️</span>ViajaFácil</a>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section class="flow">
+  <div class="wrap">
+    <div>
+      <h1>Datos del pasajero</h1>
+      <p class="flow-sub"><span>📍 Santiago → Puerto Montt</span><span>🗓️ 5 de junio · 07:30 AM</span></p>
+
+      <form class="panel" style="margin-top:22px;">
+        <h4>Pasajero 1</h4>
+        <div class="field">
+          <label for="nombre">Nombre completo</label>
+          <input id="nombre" type="text" value="Juan Pérez">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="rut">RUT / Pasaporte</label>
+            <input id="rut" type="text" value="12.345.678-9">
+          </div>
+          <div class="field">
+            <label for="telefono">Teléfono de contacto</label>
+            <input id="telefono" type="tel" value="+56 9 1234 5678">
+          </div>
+        </div>
+        <div class="field">
+          <label for="correo">Correo electrónico</label>
+          <input id="correo" type="email" value="juanperez@gmail.com">
+        </div>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h4>Resumen de tu viaje</h4>
+      <div class="summary-row"><span>✈️ Ruta</span><span>Santiago → Puerto Montt</span></div>
+      <div class="summary-row"><span>🗓️ Fecha</span><span>15 de junio · 07:30 AM</span></div>
+      <div class="summary-row"><span>💺 Asiento</span><span>5C</span></div>
+      <div class="summary-row"><span>👤 Pasajeros</span><span>1 pasajero</span></div>
+      <div class="summary-row total"><span>Total</span><span>$41.990</span></div>
+      <a class="btn btn-primary btn-block btn-lg" href="pago.html" style="margin-top:18px;">Continuar al pago</a>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

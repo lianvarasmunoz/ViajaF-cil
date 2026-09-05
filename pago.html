@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViajaFácil — Método de pago</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="back-link" href="pasajero.html">← Volver</a>
+    <a class="brand" href="index.html"><span class="icon">✈️</span>ViajaFácil</a>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section class="flow">
+  <div class="wrap">
+    <div>
+      <h1>Método de pago</h1>
+      <p class="flow-sub"><span>Total a pagar</span></p>
+      <p style="font-size:2rem; font-weight:700; color:var(--orange-dark); margin-top:6px;">$41.990</p>
+
+      <form class="panel" style="margin-top:10px;">
+        <label class="pay-method is-active">
+          <input type="radio" name="metodo" checked>
+          <div>
+            <strong>Tarjeta de crédito / débito</strong>
+            <p style="margin-top:2px;">Visa · Mastercard · American Express</p>
+          </div>
+        </label>
+
+        <div class="field">
+          <label for="numero">Número de tarjeta</label>
+          <input id="numero" type="text" value="1234 5678 9012 3456">
+        </div>
+        <div class="field">
+          <label for="titular">Nombre en la tarjeta</label>
+          <input id="titular" type="text" value="Juan Pérez">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="venc">Vencimiento</label>
+            <input id="venc" type="text" value="MM/AA">
+          </div>
+          <div class="field">
+            <label for="cvv">CVV</label>
+            <input id="cvv" type="text" value="123">
+          </div>
+        </div>
+
+        <label class="pay-method">
+          <input type="radio" name="metodo">
+          <strong>WebPay</strong>
+        </label>
+        <label class="pay-method">
+          <input type="radio" name="metodo">
+          <strong>Transferencia bancaria</strong>
+        </label>
+      </form>
+    </div>
+
+    <div class="panel">
+      <h4>Resumen de tu viaje</h4>
+      <div class="summary-row"><span>✈️ Ruta</span><span>Santiago → Puerto Montt</span></div>
+      <div class="summary-row"><span>🗓️ Fecha</span><span>15 de junio · 07:30 AM</span></div>
+      <div class="summary-row"><span>💺 Asiento</span><span>5C</span></div>
+      <div class="summary-row"><span>👤 Pasajeros</span><span>1 pasajero</span></div>
+      <div class="summary-row total"><span>Total</span><span>$41.990</span></div>
+      <a class="btn btn-primary btn-block btn-lg" href="pagina3.html" style="margin-top:18px;">Pagar $41.990</a>
+      <p class="pay-secure">🔒 Pago seguro y encriptado</p>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

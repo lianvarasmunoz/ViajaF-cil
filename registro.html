@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViajaFácil — Crea tu cuenta</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><span class="icon">✈️</span>ViajaFácil</a>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section class="auth">
+  <div class="auth-card">
+    <h1>Crea tu cuenta</h1>
+    <p>Regístrate y empieza a reservar tus viajes.</p>
+
+    <form>
+      <div class="field">
+        <label for="nombre">Nombre completo</label>
+        <input id="nombre" type="text" placeholder="Juan Pérez">
+      </div>
+      <div class="field">
+        <label for="correo">Correo electrónico</label>
+        <input id="correo" type="email" placeholder="juanperez@gmail.com">
+      </div>
+      <div class="field">
+        <label for="clave">Contraseña</label>
+        <input id="clave" type="password" placeholder="Mínimo 8 caracteres">
+      </div>
+      <div class="field">
+        <label for="clave2">Confirmar contraseña</label>
+        <input id="clave2" type="password" placeholder="Repite tu contraseña">
+      </div>
+      <label class="auth-check">
+        <input type="checkbox">
+        Acepto los términos y condiciones de ViajaFácil
+      </label>
+      <button class="btn btn-primary btn-block btn-lg" type="button">Registrarte</button>
+    </form>
+
+    <div class="auth-divider">o continúa con</div>
+    <a class="btn btn-outline btn-block" href="#">Continuar con Google</a>
+
+    <p class="auth-switch">¿Ya tienes cuenta? <a href="login.html">Ingresa</a></p>
+  </div>
+</section>
+
+</body>
+</html>

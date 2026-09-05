@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ViajaFácil — Selecciona tu asiento</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="back-link" href="javascript:history.back()">← Volver</a>
+    <a class="brand" href="index.html"><span class="icon">✈️</span>ViajaFácil</a>
+    <div class="header-actions"></div>
+  </div>
+</header>
+
+<section class="flow">
+  <div class="wrap">
+    <div>
+      <h1>Selecciona tu asiento</h1>
+      <p class="flow-sub"><span>📍 Santiago → Puerto Montt</span><span>🗓️ 5 de junio · 07:30 AM</span></p>
+
+      <div class="seat-legend">
+        <span class="key"><span class="dot avail"></span>Disponible</span>
+        <span class="key"><span class="dot selected"></span>Seleccionado</span>
+        <span class="key"><span class="dot unavail"></span>No disponible</span>
+      </div>
+
+      <div class="plane">
+        <p class="row-label">Avión · Fila 1 – 8</p>
+        <div class="seat-grid" id="seatGrid">
+          <!-- rows generated below -->
+        </div>
+        <div class="seat-picked">
+          <div>
+            <span>Asiento seleccionado</span>
+            <strong id="seatLabel">Ninguno</strong>
+          </div>
+          <a class="btn btn-primary btn-lg" href="pasajero.html">Continuar</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h4>Resumen de tu viaje</h4>
+      <div class="summary-row"><span>Transporte</span><span>✈️ Avión</span></div>
+      <div class="summary-row"><span>Ruta</span><span>Santiago → Puerto Montt</span></div>
+      <div class="summary-row"><span>Pasajeros</span><span>1 pasajero</span></div>
+      <div class="summary-row"><span>Equipaje</span><span>Mano (10 kg)</span></div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const rows = 8, unavailableRows = [3, 4];
+  const grid = document.getElementById('seatGrid');
+  const label = document.getElementById('seatLabel');
+  let current = null;
+
+  for (let r = 1; r <= rows; r++) {
+    const row = document.createElement('div');
+    row.className = 'seat-row';
+    const isUnavailable = unavailableRows.includes(r);
+
+    const numLeft = document.createElement('span');
+    numLeft.className = 'num'; numLeft.textContent = r;
+    row.appendChild(numLeft);
+
+    ['A','B','C'].forEach(letter => row.appendChild(makeSeat(r, letter, isUnavailable)));
+
+    const numRight = document.createElement('span');
+    numRight.className = 'num'; numRight.textContent = r;
+    row.appendChild(numRight);
+
+    ['D','E','F'].forEach(letter => row.appendChild(makeSeat(r, letter, isUnavailable)));
+
+    grid.appendChild(row);
+  }
+
+  function makeSeat(row, letter, isUnavailable) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'seat' + (isUnavailable ? ' unavailable' : '');
+    btn.dataset.id = row + letter;
+    if (!isUnavailable) {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.seat.selected').forEach(s => s.classList.remove('selected'));
+        btn.classList.add('selected');
+        current = btn.dataset.id;
+        label.textContent = current;
+      });
+    }
+    return btn;
+  }
+
+  // preselecciona el 5C, como en el ejemplo de reserva
+  const defaultSeat = grid.querySelector('[data-id="5C"]');
+  if (defaultSeat) defaultSeat.click();
+</script>
+
+</body>
+</html>
